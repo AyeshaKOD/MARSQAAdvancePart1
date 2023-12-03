@@ -1,0 +1,18 @@
+[
+  {
+    "Title": "Gardening",
+    "Description": "Teaching Gardening",
+    "Category": "Fun & Lifestyle",
+    "SubCategory": "Online Lessons",
+    "Tags": "Gardening",
+    "ServiceType": "Hourly basis service",
+    "LocationType": "On-site",
+    "StartDate": "11/12/2023",
+    "EndDate": "12/01/2024",
+    "SkillTrade": "Credit",
+    "SkillExchange": "C Sharp",
+    "Amount": "10",
+    "ActiveStatus": "Active",
+    "PopUpMessage": "Service Listing Added Successfully"
+  }
+]
