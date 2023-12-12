@@ -17,12 +17,22 @@ namespace AdvanceSolutionpart1.Tests
     [TestFixture]
     public class SkillsTests : CommonDriver
     {
-        LoginSteps loginSteps = new LoginSteps();
-        JSONReader jsonReader;
-        LoginAssertion loginAssertion = new LoginAssertion();
-        SkillsComponent skillsComponent = new SkillsComponent();
-        SkillsSteps skillsSteps = new SkillsSteps();
-        SkillsAssertion skillsAssertion = new SkillsAssertion();
+        private LoginSteps loginSteps;
+        public JSONReader jsonReader;
+        private LoginAssertion loginAssertion;
+        private SkillsComponent skillsComponent;
+        private SkillsSteps skillsSteps;
+        private SkillsAssertion skillsAssertion;
+
+        public SkillsTests()
+        {
+             loginSteps = new LoginSteps();
+             loginAssertion = new LoginAssertion();
+             skillsComponent = new SkillsComponent();
+             skillsSteps = new SkillsSteps();
+             skillsAssertion = new SkillsAssertion();
+        }
+        
 
         [Test, Order(1)]
         public void AddSkillsTest()
@@ -35,6 +45,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -66,6 +77,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -96,6 +108,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -126,6 +139,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 

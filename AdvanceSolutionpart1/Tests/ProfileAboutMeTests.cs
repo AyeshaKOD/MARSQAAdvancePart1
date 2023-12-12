@@ -17,11 +17,20 @@ namespace AdvanceSolutionpart1.Tests
     [TestFixture]
     public class ProfileAboutMeTests : CommonDriver
     {
-        LoginSteps loginSteps = new LoginSteps();
-        JSONReader jsonReader;
-        LoginAssertion loginAssertion = new LoginAssertion();
-        ProfileInfoSteps profileInfoSteps = new ProfileInfoSteps();
-        ProfileAboutMeAssertion profileAboutMeAssertion = new ProfileAboutMeAssertion();
+        private LoginSteps loginSteps;
+        public JSONReader jsonReader;
+        private LoginAssertion loginAssertion;
+        private ProfileInfoSteps profileInfoSteps;
+        private ProfileAboutMeAssertion profileAboutMeAssertion;
+
+        public ProfileAboutMeTests()
+        {
+            loginSteps = new LoginSteps();
+            loginAssertion = new LoginAssertion();
+            profileInfoSteps = new ProfileInfoSteps();
+            profileAboutMeAssertion = new ProfileAboutMeAssertion();
+        }
+        
 
 
         [Test]
@@ -35,8 +44,9 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
-                loginSteps.Login(item.LoginId, item.Password);
-                loginAssertion.AssertLogin(item.UserName);
+                //Login login = jsonReader.ReadLoginFile();
+                 loginSteps.Login(item.LoginId, item.Password);
+                 loginAssertion.AssertLogin(item.UserName);
 
             }
             string profileAboutMeFilePath = ProjectPathHelper.projectPath + "\\TestData\\ProfileAboutMe\\ProfileAboutMe.json";

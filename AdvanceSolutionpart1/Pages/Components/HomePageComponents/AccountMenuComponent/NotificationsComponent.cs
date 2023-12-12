@@ -171,6 +171,7 @@ namespace AdvanceSolutionpart1.Pages.Components.HomePageComponents.AccountMenuCo
             RenderNotificationDropDown();
             notificationDropDown.Click();
             RenderSeeAllNotificationLink();
+           Thread.Sleep(1000);
             seeAllLink.Click();
             Thread.Sleep(3000);
         }

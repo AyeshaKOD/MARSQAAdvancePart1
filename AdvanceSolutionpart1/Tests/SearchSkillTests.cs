@@ -16,12 +16,22 @@ namespace AdvanceSolutionpart1.Tests
     [TestFixture]
     public class SearchSkillTests : CommonDriver
     {
-        LoginSteps loginSteps = new LoginSteps();
-        JSONReader jsonReader;
-        LoginAssertion loginAssertion = new LoginAssertion();
-        ShareSkillSteps shareSkillSteps = new ShareSkillSteps();
-        SearchSkillSteps searchSkillSteps = new SearchSkillSteps();
-        SearchSkillAssertion searchSkillAssertion = new SearchSkillAssertion();
+        private LoginSteps loginSteps;
+        public JSONReader jsonReader;
+        private LoginAssertion loginAssertion;
+        private ShareSkillSteps shareSkillSteps;
+        private SearchSkillSteps searchSkillSteps;
+        private SearchSkillAssertion searchSkillAssertion;
+
+        public SearchSkillTests()
+        {
+            loginSteps = new LoginSteps();
+            loginAssertion = new LoginAssertion();
+            shareSkillSteps = new ShareSkillSteps();
+            searchSkillSteps = new SearchSkillSteps();
+            searchSkillAssertion = new SearchSkillAssertion();
+        }
+        
 
         [Test, Order(1)]
         public void SearchSkillByCategoryTest()
@@ -34,6 +44,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -65,6 +76,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 

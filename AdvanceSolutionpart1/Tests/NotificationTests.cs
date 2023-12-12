@@ -14,14 +14,26 @@ using System.Threading.Tasks;
 
 namespace AdvanceSolutionpart1.Tests
 {
+    
+
     [TestFixture]
     public class NotificationTests : CommonDriver
     {
-        LoginSteps loginSteps = new LoginSteps();
-        JSONReader jsonReader;
-        LoginAssertion loginAssertion = new LoginAssertion();
-        NotificationSteps notificationSteps = new NotificationSteps();
-        NotificationAssertion notificationAssertion = new NotificationAssertion();
+        private LoginSteps loginSteps;
+        public JSONReader jsonReader;
+        private LoginAssertion loginAssertion;
+        private NotificationSteps notificationSteps;
+        private NotificationAssertion notificationAssertion;
+        
+       public NotificationTests()
+        {
+            loginSteps = new LoginSteps();
+            loginAssertion = new LoginAssertion();
+            notificationSteps = new NotificationSteps();
+            notificationAssertion = new NotificationAssertion();
+
+        } 
+        
 
         [Test, Order(1)]
         public void NotificationsLoadMoreTest()
@@ -34,6 +46,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -53,6 +66,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -72,6 +86,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -92,6 +107,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -111,6 +127,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -130,6 +147,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 

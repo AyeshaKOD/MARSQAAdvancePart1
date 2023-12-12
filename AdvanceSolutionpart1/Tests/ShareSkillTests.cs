@@ -17,11 +17,20 @@ namespace AdvanceSolutionpart1.Tests
     [TestFixture]
     public class ShareSkillTests : CommonDriver
     {
-        LoginSteps loginSteps = new LoginSteps();
-        JSONReader jsonReader;
-        LoginAssertion loginAssertion = new LoginAssertion();
-        ShareSkillSteps shareSkillSteps = new ShareSkillSteps();
-        ShareSkillAssertHelper shareSkillAssert = new ShareSkillAssertHelper();
+        private LoginSteps loginSteps;
+        public JSONReader jsonReader;
+        private LoginAssertion loginAssertion;
+        private ShareSkillSteps shareSkillSteps;
+        private ShareSkillAssertHelper shareSkillAssert;
+
+        public ShareSkillTests ()
+        {
+             loginSteps = new LoginSteps();
+             loginAssertion = new LoginAssertion();
+             shareSkillSteps = new ShareSkillSteps();
+             shareSkillAssert = new ShareSkillAssertHelper();
+        }
+        
 
 
         [Test, Order(1)]
@@ -35,6 +44,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 
@@ -65,6 +75,7 @@ namespace AdvanceSolutionpart1.Tests
             login = jsonReader.ReadLoginFile();
             foreach (var item in login)
             {
+                //Login login = jsonReader.ReadLoginFile();
                 loginSteps.Login(item.LoginId, item.Password);
                 loginAssertion.AssertLogin(item.UserName);
 

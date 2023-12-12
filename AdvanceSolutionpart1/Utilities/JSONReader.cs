@@ -14,16 +14,20 @@ namespace AdvanceSolutionpart1.Utilities
         {
             _sampleJsonFilePath = sampleJsonFilePath;
         }
-
+        
         public List<Login> ReadLoginFile()
+        //public Login ReadLoginFile()
         {
             using StreamReader reader = new(_sampleJsonFilePath);
             var json = reader.ReadToEnd();
             List<Login> list = JsonConvert.DeserializeObject<List<Login>>(json);
             return list;
-
+            //using StreamReader reader = new(_sampleJsonFilePath);
+            //var json = reader.ReadToEnd();
+            //Login login = JsonConvert.DeserializeObject<Login>(json);
+            //return login;
         }
-
+        
         public List<ShareSkill> ReadShareSkillFile()
         {
             using StreamReader reader = new(_sampleJsonFilePath);
